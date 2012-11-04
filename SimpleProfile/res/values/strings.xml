@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name">SimpleProfile</string>
+    
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="address">Address</string>
+    <string name="profile_label">Profile</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="first_name_hint">Enter your first name</string>
+    <string name="last_name_hint">Enter your last name</string>
+    <string name="email_hint">Enter your email</string>
+    <string name="address_hint">Enter your address</string>
+    <string name="edit">Edit</string>
+
+</resources>

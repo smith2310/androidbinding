@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://www.gueei.com/android-binding/"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:background="#ABF5F1" >
+
+    <TextView
+        style="@style/Field.Title"
+        android:text="@string/first_name" />
+
+    <EditText
+       style="@style/Field.Entry" 
+        android:hint="@string/first_name_hint"
+        binding:visibility="editing"
+        binding:text="firstName"/>
+
+    <TextView
+        style="@style/Field"
+        binding:visibility="NOT(editing)"
+        binding:text="firstName"/>
+
+    <TextView
+        style="@style/Field.Title"
+        android:text="@string/last_name" />
+
+    <EditText
+        style="@style/Field.Entry" 
+        android:hint="@string/last_name_hint"
+        binding:visibility="editing"
+        binding:text="lastName"/>
+
+    <TextView
+        style="@style/Field"
+        binding:visibility="NOT(editing)"
+        binding:text="lastName"/>
+
+    <TextView
+        style="@style/Field.Title"
+        android:text="@string/email" />
+    
+    <EditText
+       style="@style/Field.Entry" 
+        android:inputType="textEmailAddress"
+        android:hint="@string/email_hint"
+        binding:visibility="editing"
+        binding:text="email"/>
+
+    <TextView
+        style="@style/Field"
+        binding:visibility="NOT(editing)"
+        binding:text="email"/>
+
+    <TextView
+        style="@style/Field.Title"
+        android:text="@string/address" />
+    
+    <EditText
+        style="@style/Field.Entry" 
+        android:hint="@string/address_hint" 
+        binding:visibility="editing"
+        binding:text="address"/>
+
+    <TextView
+        android:id="@+id/addressTV"
+        style="@style/Field"
+        binding:visibility="NOT(editing)"
+        binding:text="address"/>
+    
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_horizontal"
+        android:weightSum="2"
+        android:layout_marginTop="30dp"
+        binding:visibility="editing">
+        <Button android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/save"
+            binding:onClick="saveCommand"/>
+    </LinearLayout>
+
+</LinearLayout>

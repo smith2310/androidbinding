@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:background="#ABF5F1" >
+
+    <TextView
+        style="@style/Field.Title"
+        android:text="@string/first_name" />
+
+    <EditText
+        android:id="@+id/firstNameET"
+        style="@style/Field.Entry" 
+        android:hint="@string/first_name_hint"/>
+
+    <TextView
+        android:id="@+id/firstNameTV"
+        style="@style/Field"/>
+
+    <TextView
+        style="@style/Field.Title"
+        android:text="@string/last_name" />
+
+    <EditText
+        android:id="@+id/lastNameET"
+        style="@style/Field.Entry" 
+        android:hint="@string/last_name_hint"/>
+
+    <TextView
+        android:id="@+id/lastNameTV"
+        style="@style/Field"/>
+
+    <TextView
+        style="@style/Field.Title"
+        android:text="@string/email" />
+    
+    <EditText
+        android:id="@+id/emailET"
+        style="@style/Field.Entry" 
+        android:inputType="textEmailAddress"
+        android:hint="@string/email_hint"/>
+
+    <TextView
+        android:id="@+id/emailTV"
+        style="@style/Field"/>
+
+    <TextView
+        style="@style/Field.Title"
+        android:text="@string/address" />
+    
+    <EditText
+        android:id="@+id/addressET"
+        style="@style/Field.Entry" 
+        android:hint="@string/address_hint" />
+
+    <TextView
+        android:id="@+id/addressTV"
+        style="@style/Field"/>
+    
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_horizontal"
+        android:weightSum="3"
+        android:layout_marginTop="30dp"
+        android:visibility="gone"
+        android:id="@+id/saveButtonContainer ">
+        <Button android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/cancelButton"
+            android:text="@string/cancel"/>
+        <Button android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/saveButton"
+            android:text="@string/save"/>
+    </LinearLayout>
+
+</LinearLayout>

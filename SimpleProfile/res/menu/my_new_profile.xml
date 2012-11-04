@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://www.gueei.com/android-binding" >
+    
+	<item android:id="@+id/editAction"
+	    android:icon="@drawable/pencil"
+	    android:showAsAction="always"
+	    android:title="@string/edit"
+	    binding:onClick="editCommand"/>
+    
+</menu>
