@@ -54,13 +54,9 @@ public class ProfileActivity extends Activity implements OnClickListener {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		if (!editing) {
-			MenuInflater inflater = getMenuInflater();
-			inflater.inflate(R.menu.profile, menu);
-			return true;
-		} else {
-			return super.onCreateOptionsMenu(menu);
-		}
+		MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.profile, menu);
+		return true;
 	}
 
 	@Override
@@ -71,6 +67,11 @@ public class ProfileActivity extends Activity implements OnClickListener {
 			break;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+		return !editing;
 	}
 
 	private void updateFields() {
@@ -110,14 +111,17 @@ public class ProfileActivity extends Activity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		if (v == saveButton) {
-			Editable newEntry=firstNameET.getText();
-			newProfile.setFirstName(newEntry!=null?newEntry.toString():null);
-			newEntry=lastNameET.getText();
-			newProfile.setLastName(newEntry!=null?newEntry.toString():null);
-			newEntry=emailET.getText();
-			newProfile.setEmail(newEntry!=null?newEntry.toString():null);
-			newEntry=addressET.getText();
-			newProfile.setAddress(newEntry!=null?newEntry.toString():null);
+			Editable newEntry = firstNameET.getText();
+			newProfile.setFirstName(newEntry != null ? newEntry.toString()
+					: null);
+			newEntry = lastNameET.getText();
+			newProfile.setLastName(newEntry != null ? newEntry.toString()
+					: null);
+			newEntry = emailET.getText();
+			newProfile.setEmail(newEntry != null ? newEntry.toString() : null);
+			newEntry = addressET.getText();
+			newProfile
+					.setAddress(newEntry != null ? newEntry.toString() : null);
 			mProfilecontroller.saveProfile(newProfile);
 			mProfile = newProfile;
 		}
