@@ -40,20 +40,20 @@ public class SimpleProfileTest extends
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
-		mInstrumentation=getInstrumentation();
+		mInstrumentation = getInstrumentation();
 		solo = new Solo(mInstrumentation);
-		mActivity=getActivity();
-		firstNameET=(EditText)mActivity.findViewById(R.id.firstNameET);
-		firstNameTV=(TextView)mActivity.findViewById(R.id.firstNameTV);
-		saveButton=(Button)mActivity.findViewById(R.id.saveButton);
-		cancelButton=(Button)mActivity.findViewById(R.id.cancelButton);
+		mActivity = getActivity();
+		firstNameET = (EditText) mActivity.findViewById(R.id.firstNameET);
+		firstNameTV = (TextView) mActivity.findViewById(R.id.firstNameTV);
+		saveButton = (Button) mActivity.findViewById(R.id.saveButton);
+		cancelButton = (Button) mActivity.findViewById(R.id.cancelButton);
 	}
 
 	public void testSaveFirstName() {
 		solo.clickOnActionBarItem(R.id.editAction);
 		final String newFirstName = UUID.randomUUID().toString();
 		mInstrumentation.runOnMainSync(new Runnable() {
-			
+
 			@Override
 			public void run() {
 				firstNameET.setText(newFirstName);
@@ -61,20 +61,19 @@ public class SimpleProfileTest extends
 			}
 		});
 		assertEquals(newFirstName, firstNameTV.getText().toString());
-		//What happen in the Model?
-		ProfileController pController=new ProfileController(mActivity);
-		Profile p=pController.retrieveProfile();
+		// What happen in the Model?
+		ProfileController pController = new ProfileController(mActivity);
+		Profile p = pController.retrieveProfile();
 		assertEquals(newFirstName, p.getFirstName());
 	}
-	
-	
+
 	public void testCancelEdition() {
 		solo.clickOnActionBarItem(R.id.editAction);
-		CharSequence value=firstNameTV.getText();
-		String oldFirstName=value!=null?value.toString():"";
+		CharSequence value = firstNameTV.getText();
+		String oldFirstName = value != null ? value.toString() : "";
 		final String newFirstName = UUID.randomUUID().toString();
 		mInstrumentation.runOnMainSync(new Runnable() {
-			
+
 			@Override
 			public void run() {
 				firstNameET.setText(newFirstName);
@@ -82,6 +81,10 @@ public class SimpleProfileTest extends
 			}
 		});
 		assertEquals(oldFirstName, firstNameTV.getText().toString());
+		// What happen in the Model?
+		ProfileController pController = new ProfileController(mActivity);
+		Profile p = pController.retrieveProfile();
+		assertEquals(oldFirstName, p.getFirstName());
 	}
 
 }
