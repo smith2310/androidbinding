@@ -13,7 +13,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ProfileActivity"
-            android:label="@string/profile_label" >
+            android:label="@string/profile_label" 
+            android:icon="@drawable/devfest">
             
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
